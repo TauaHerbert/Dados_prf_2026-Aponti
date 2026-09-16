@@ -79,9 +79,3 @@ SELECT * FROM vw_bivariada_tipo_acidente;
 SELECT 'base' AS origem, COUNT(*) AS total, SUM(acidente_fatal) AS fatais FROM vw_acidentes_base
 	UNION ALL
 		SELECT 'soma_por_uf' AS origem, SUM(total_acidentes), SUM(acidentes_fatais) FROM ( SELECT uf, COUNT(*) AS total_acidentes, SUM(acidente_fatal) AS acidentes_fatais FROM vw_acidentes_base GROUP BY uf);
-
-
-
-
-
-
